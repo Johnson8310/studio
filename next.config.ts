@@ -9,15 +9,24 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        port: '',
-        pathname: '/**',
-      },
-    ],
+     // Removed picsum.photos as it's not used in the app
+     // Add any necessary image domains here if needed later
+    remotePatterns: [],
   },
+   // Add experimental flags required by Genkit or other libraries if needed
+   experimental: {
+     // Example: Enable server actions if you plan to use them extensively
+     // serverActions: true,
+   },
 };
+
+// Ensure Genkit experimental flags are included
+Object.assign(nextConfig, {
+  experimental: {
+    ...nextConfig.experimental,
+    instrumentationHook: true, // Required by @genkit-ai/next
+  },
+});
+
 
 export default nextConfig;
