@@ -11,6 +11,7 @@ import { readFileAsDataURI } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Loader2 } from 'lucide-react';
+import SortlyAiLogo from '@/components/sortly-ai-logo'; // Corrected import
 
 const PREDEFINED_CATEGORIES = ['Documents', 'Images', 'Videos', 'Audio', 'Archives', 'Code', 'Other'];
 
@@ -139,19 +140,24 @@ export default function Home() {
 
   return (
     <div className="container mx-auto p-4 md:p-8 min-h-screen flex flex-col">
-      <header className="mb-8 text-center">
-        <h1 className="text-4xl font-bold text-primary mb-2">SortlyAI</h1>
-        <p className="text-lg text-muted-foreground">
-          Intelligently sort and categorize your files with the power of AI.
-        </p>
-      </header>
+       <header className="mb-8 flex flex-col items-center gap-4 text-center">
+         <SortlyAiLogo /> {/* Render the imported logo component */}
+         <div className="text-center">
+           <h1 className="text-4xl font-bold text-primary">
+             SortlyAI
+           </h1>
+           <p className="text-lg text-muted-foreground mt-2">
+             Intelligently sort and categorize your files with the power of AI.
+           </p>
+         </div>
+       </header>
 
       <main className="flex-grow flex flex-col gap-8">
         <Card className="shadow-lg">
           <CardHeader>
             <CardTitle>1. Upload Your Files</CardTitle>
             <CardDescription>
-              Select or drag and drop the files you want to organize.
+               This app currently requires you to manually select files. Automatic file pulling from devices is not supported. Select or drag and drop the files you want to organize.
             </CardDescription>
           </CardHeader>
           <CardContent>
