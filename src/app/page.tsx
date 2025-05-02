@@ -11,7 +11,7 @@ import { readFileAsDataURI } from '@/lib/utils';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Separator } from '@/components/ui/separator';
 import { Loader2 } from 'lucide-react';
-import SortlyAiLogo from '@/components/sortly-ai-logo'; // Corrected import
+// Removed import for SortlyAiLogo
 
 const PREDEFINED_CATEGORIES = ['Documents', 'Images', 'Videos', 'Audio', 'Archives', 'Code', 'Other'];
 
@@ -141,7 +141,7 @@ export default function Home() {
   return (
     <div className="container mx-auto p-4 md:p-8 min-h-screen flex flex-col">
        <header className="mb-8 flex flex-col items-center gap-4 text-center">
-         <SortlyAiLogo /> {/* Render the imported logo component */}
+         {/* Removed SortlyAiLogo component usage */}
          <div className="text-center">
            <h1 className="text-4xl font-bold text-primary">
              SortlyAI
